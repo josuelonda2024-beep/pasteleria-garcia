@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta
+    name="description"
+    content="Explora el catálogo de Pastelerías García y solicita una cotización personalizada por WhatsApp."
+  >
+  <meta name="theme-color" content="#721c35">
+
+  <title>Pastelerías García | Catálogo y cotizaciones</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Pastelerías García, inicio">
+        <span class="brand-mark" aria-hidden="true">PG</span>
+
+        <span class="brand-text">
+          <strong>Pastelerías García</strong>
+          <small>Tortas para compartir</small>
+        </span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        Menú
+      </button>
+
+      <nav class="nav" id="main-nav" aria-label="Navegación principal">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#cotizar">Personaliza tu pedido</a>
+        <a href="#sucursales">Sucursales</a>
+      </nav>
+
+      <a
+        class="button button-small header-contact"
+        href="https://wa.me/593990673823"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Escríbenos
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- PORTADA -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Pastelerías García · Guayaquil</p>
+
+          <h1>
+            Hay momentos que merecen
+            <em>algo más dulce.</em>
+          </h1>
+
+          <p class="hero-description">
+            Encuentra inspiración para tu próxima celebración.
+            Cuéntanos qué tienes en mente y solicita una cotización
+            personalizada.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button" href="#catalogo">
+              Explorar catálogo
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="button button-outline" href="#cotizar">
+              Cotizar mi idea
+            </a>
+          </div>
+
+          <div class="hero-details" aria-label="Opciones del catálogo">
+            <span>Tortas</span>
+            <span>Celebraciones</span>
+            <span>Bocaditos</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <!--
+            Para usar una fotografía, reemplaza el bloque cake-scene por:
+
+            <img
+              class="hero-photo"
+              src="imagenes/portada.jpg"
+              alt="Torta de Pastelerías García"
+              width="900"
+              height="1050"
+              fetchpriority="high"
+            >
+          -->
+
+          <div class="cake-scene" aria-hidden="true">
+            <div class="scene-circle"></div>
+            <span class="scene-word">García</span>
+
+            <div class="cake">
+              <div class="cake-candle"></div>
+              <div class="cake-flame"></div>
+              <div class="cake-top"></div>
+              <div class="cake-body"></div>
+              <div class="cake-base"></div>
+              <div class="cake-plate"></div>
+            </div>
+
+            <span class="scene-caption">Tu próxima celebración empieza aquí</span>
+          </div>
+
+          <div class="visual-note">
+            <span class="note-icon" aria-hidden="true">✦</span>
+
+            <div>
+              <strong>Una idea, muchas posibilidades</strong>
+              <span>Cuéntanos cómo imaginas tu torta.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRANJA EDITORIAL -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="container ribbon-inner">
+        <span>Momentos especiales</span>
+        <span>✦</span>
+        <span>Detalles que se comparten</span>
+        <span>✦</span>
+        <span>Pastelerías García</span>
+      </div>
+    </div>
+
+    <!-- CATÁLOGO -->
+    <section class="section catalog" id="catalogo">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Encuentra tu inspiración</p>
+            <h2>Un antojo para cada ocasión.</h2>
+          </div>
+
+          <p class="section-description">
+            Selecciona una opción para incluirla en tu solicitud.
+            Consulta diseños, sabores, precios y disponibilidad por WhatsApp.
+          </p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filtrar catálogo">
+          <button
+            class="filter is-active"
+            type="button"
+            data-filter="todos"
+            aria-pressed="true"
+          >
+            Ver todo
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="cumpleanos"
+            aria-pressed="false"
+          >
+            Cumpleaños
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="celebraciones"
+            aria-pressed="false"
+          >
+            Bodas y celebraciones
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="bocaditos"
+            aria-pressed="false"
+          >
+            Bocaditos y postres
+          </button>
+        </div>
+
+        <p class="sr-only" id="catalog-status" role="status"></p>
+
+        <div class="product-grid" id="product-grid"></div>
+
+        <p class="catalog-notice">
+          Las ilustraciones son referenciales. El diseño, los ingredientes
+          y la disponibilidad se confirman al cotizar.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="process-section">
+      <div class="container process-grid">
+        <div class="process-intro">
+          <p class="eyebrow">De tu idea a la celebración</p>
+          <h2>Tu solicitud, sin complicaciones.</h2>
+        </div>
+
+        <ol class="steps">
+          <li>
+            <span class="step-number">01</span>
+            <h3>Elige o imagina</h3>
+            <p>Explora el catálogo o cuéntanos tu propia idea.</p>
+          </li>
+
+          <li>
+            <span class="step-number">02</span>
+            <h3>Comparte los detalles</h3>
+            <p>Indica la fecha, las porciones y tus preferencias.</p>
+          </li>
+
+          <li>
+            <span class="step-number">03</span>
+            <h3>Confirma por WhatsApp</h3>
+            <p>Consulta el precio y coordina las condiciones del pedido.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- COTIZACIÓN -->
+    <section class="section quote-section" id="cotizar">
+      <div class="container quote-layout">
+        <div class="quote-copy">
+          <p class="eyebrow">Hecha para tu ocasión</p>
+          <h2>Cuéntanos qué vas a celebrar.</h2>
+
+          <p>
+            Completa los detalles y abre WhatsApp con tu solicitud
+            lista para enviar.
+          </p>
+
+          <div class="quote-tip">
+            <span aria-hidden="true">✦</span>
+            <p>
+              ¿Tienes una foto de referencia? Puedes adjuntarla
+              directamente en el chat después de enviar tu solicitud.
+            </p>
+          </div>
+
+          <div class="order-summary">
+            <span class="summary-label">Tu selección</span>
+            <h3 id="summary-product">Pedido personalizado</h3>
+            <p id="summary-details">
+              Completa el formulario para preparar tu solicitud.
+            </p>
+            <button class="text-button" id="clear-selection" type="button" hidden>
+              Quitar producto seleccionado
+            </button>
+          </div>
+        </div>
+
+        <form class="quote-form" id="quote-form">
+          <input id="product" name="producto" type="hidden" value="">
+
+          <div class="form-heading">
+            <h3>Solicitar cotización</h3>
+            <p>Los campos con * son obligatorios.</p>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="customer-name">Tu nombre *</label>
+              <input
+                id="customer-name"
+                name="nombre"
+                type="text"
+                placeholder="¿Cómo te llamas?"
+                autocomplete="name"
+                maxlength="80"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="occasion">Ocasión *</label>
+              <select id="occasion" name="ocasion" required>
+                <option value="">Selecciona una opción</option>
+                <option>Cumpleaños</option>
+                <option>Boda</option>
+                <option>Quinceaños</option>
+                <option>Aniversario</option>
+                <option>Evento corporativo</option>
+                <option>Reunión familiar</option>
+                <option>Otra ocasión</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="event-date">Fecha del evento *</label>
+              <input id="event-date" name="fecha" type="date" required>
+            </div>
+
+            <div class="field">
+              <label for="servings">Personas aproximadas *</label>
+              <input
+                id="servings"
+                name="personas"
+                type="number"
+                min="1"
+                max="5000"
+                step="1"
+                placeholder="Ej.: 20"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="flavor">Sabor de preferencia</label>
+              <input
+                id="flavor"
+                name="sabor"
+                type="text"
+                maxlength="100"
+                placeholder="Ej.: chocolate; sujeto a disponibilidad"
+              >
+            </div>
+
+            <div class="field">
+              <label for="delivery">Modalidad *</label>
+              <select id="delivery" name="modalidad" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Retiro en local">
+                  Retiro en local
+                </option>
+                <option value="Consultar entrega a domicilio">
+                  Consultar entrega a domicilio
+                </option>
+                <option value="Por coordinar">
+                  Por coordinar
+                </option>
+              </select>
+            </div>
+
+            <div class="field field-full" id="branch-field" hidden>
+              <label for="branch">Sucursal de preferencia</label>
+              <select id="branch" name="sucursal">
+                <option value="">Por coordinar</option>
+                <option>29 y la M</option>
+                <option>27 y la Q</option>
+                <option>22 y la Q</option>
+                <option>García Goyena y la 22</option>
+              </select>
+            </div>
+
+            <div class="field field-full">
+              <label for="notes">Tu idea o dedicatoria</label>
+              <textarea
+                id="notes"
+                name="detalles"
+                rows="4"
+                maxlength="1200"
+                placeholder="Temática, colores, dedicatoria, presentación o detalles que quieras consultar."
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="button button-submit" type="submit">
+            Continuar en WhatsApp
+            <span aria-hidden="true">↗</span>
+          </button>
+
+          <p class="form-disclaimer">
+            Se abrirá WhatsApp para que revises y envíes el mensaje.
+            Esta solicitud no confirma disponibilidad, precio ni reserva.
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <!-- SUCURSALES -->
+    <section class="section locations-section" id="sucursales">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Encuéntranos</p>
+            <h2>Conversemos sobre tu próximo pedido.</h2>
+          </div>
+
+          <p class="section-description">
+            Consulta la ubicación exacta y los horarios de atención
+            antes de visitar una sucursal.
+          </p>
+        </div>
+
+        <!--
+          DATOS PENDIENTES DE APROBACIÓN:
+          Confirmar las sucursales con el cliente antes de publicar.
+          Después, reemplazar los botones de consulta por sus enlaces
+          oficiales de Google Maps, si se dispone de ellos.
+        -->
+        <div class="locations-grid" id="locations-grid"></div>
+      </div>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="closing">
+      <div class="container closing-inner">
+        <div>
+          <p class="eyebrow">Pastelerías García</p>
+          <h2>Tu próxima celebración tiene una historia.</h2>
+          <p>Cuéntanos la tuya y empecemos por la torta.</p>
+        </div>
+
+        <a class="button button-light" href="#cotizar">
+          Preparar mi solicitud
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Pastelerías García</strong>
+        <p>Guayaquil, Ecuador</p>
+      </div>
+
+      <a
+        href="https://wa.me/593990673823"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        WhatsApp: 099 067 3823
+      </a>
+
+      <small>
+        © <span id="year"></span> Pastelerías García.
+      </small>
+    </div>
+  </footer>
+
+  <a
+    class="floating-contact"
+    href="https://wa.me/593990673823"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Abrir WhatsApp de Pastelerías García en otra pestaña"
+  >
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.8c0 2.1.6 4.2 1.6 6L.1 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.2-3.5-8.4ZM12.2 21.7a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 1 1 8.4 4.7Zm5.4-7.3c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.8-.7-1.4-1.6-1.6-1.9-.1-.3 0-.4.1-.6l.5-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.7 1.1 2.9c.2.2 2 3.1 5 4.4.7.3 1.2.5 1.7.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"
+      />
+    </svg>
+  </a>
+
+  <noscript>
+    <div class="noscript-message">
+      Activa JavaScript para utilizar los filtros y el formulario.
+      También puedes escribir directamente al WhatsApp 099 067 3823.
+    </div>
+  </noscript>
+
+  <script>
+    "use strict";
+
+    const WHATSAPP_NUMBER = "593990673823";
+
+    /*
+      CONTENIDO EDITABLE:
+      Aprobar nombres, categorías y descripciones con el cliente.
+
+      Para agregar fotos:
+      image: "imagenes/torta-tematica.jpg"
+
+      Mientras image esté vacío, se muestra una ilustración CSS.
+    */
+    const products = [
+      {
+        id: "tematica",
+        name: "Torta temática",
+        category: "cumpleanos",
+        label: "Cumpleaños",
+        description:
+          "Cuéntanos la temática, los colores y los detalles que imaginas.",
+        image: "",
+        style: "rose"
+      },
+      {
+        id: "bodas",
+        name: "Torta para bodas",
+        category: "celebraciones",
+        label: "Bodas y celebraciones",
+        description:
+          "Consulta opciones de diseño y presentación para tu celebración.",
+        image: "",
+        style: "ivory"
+      },
+      {
+        id: "chocolate",
+        name: "Torta de chocolate",
+        category: "cumpleanos",
+        label: "Para compartir",
+        description:
+          "Solicita información sobre tamaños, rellenos y disponibilidad.",
+        image: "",
+        style: "chocolate"
+      },
+      {
+        id: "cupcakes",
+        name: "Cupcakes personalizados",
+        category: "bocaditos",
+        label: "Detalles especiales",
+        description:
+          "Consulta presentaciones y personalización para tu ocasión.",
+        image: "",
+        style: "berry"
+      },
+      {
+        id: "bocaditos",
+        name: "Bocaditos para eventos",
+        category: "bocaditos",
+        label: "Reuniones y eventos",
+        description:
+          "Consulta las variedades disponibles y las cantidades para tu evento.",
+        image: "",
+        style: "caramel"
+      },
+      {
+        id: "celebracion",
+        name: "Torta para tu celebración",
+        category: "celebraciones",
+        label: "Diseño personalizado",
+        description:
+          "Comparte una referencia y consulta cómo adaptar tu idea.",
+        image: "",
+        style: "sage"
+      }
+    ];
+
+    /*
+      Confirmar estas direcciones antes de la publicación final.
+      mapUrl puede contener el enlace oficial de Google Maps.
+    */
+    const branches = [
+      { name: "29 y la M", mapUrl: "" },
+      { name: "27 y la Q", mapUrl: "" },
+      { name: "22 y la Q", mapUrl: "" },
+      { name: "García Goyena y la 22", mapUrl: "" }
+    ];
+
+    const form = document.querySelector("#quote-form");
+    const productInput = document.querySelector("#product");
+    const productGrid = document.querySelector("#product-grid");
+    const dateInput = document.querySelector("#event-date");
+    const deliveryInput = document.querySelector("#delivery");
+    const branchInput = document.querySelector("#branch");
+    const branchField = document.querySelector("#branch-field");
+    const clearSelection = document.querySelector("#clear-selection");
+
+    function whatsappUrl(message) {
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function renderProducts() {
+      productGrid.innerHTML = products.map((product, index) => `
+        <article
+          class="product-card"
+          data-category="${product.category}"
+        >
+          <div class="product-media theme-${product.style}">
+            ${
+              product.image
+                ? `<img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    width="640"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  >`
+                : `<div class="mini-scene" aria-hidden="true">
+                    <span class="product-number">
+                      ${String(index + 1).padStart(2, "0")}
+                    </span>
+                    <div class="mini-cake">
+                      <span class="mini-topping"></span>
+                      <span class="mini-layer"></span>
+                      <span class="mini-plate"></span>
+                    </div>
+                    <span class="media-caption">Pastelerías García</span>
+                  </div>`
+            }
+          </div>
+
+          <div class="product-content">
+            <span class="product-category">${product.label}</span>
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+
+            <div class="product-bottom">
+              <span>Precio a consultar</span>
+              <button
+                class="product-action"
+                type="button"
+                data-product="${product.id}"
+                aria-label="Cotizar ${product.name}"
+              >
+                Cotizar <span aria-hidden="true">↗</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function renderBranches() {
+      document.querySelector("#locations-grid").innerHTML =
+        branches.map((branch, index) => {
+          const url = branch.mapUrl || whatsappUrl(
+            `Hola, quisiera confirmar la ubicación y los horarios de la sucursal ${branch.name}.`
+          );
+
+          return `
+            <article class="location-card">
+              <span class="location-index">
+                Sucursal ${String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h3>${branch.name}</h3>
+              <p>Consulta ubicación exacta y horario de atención.</p>
+
+              <a
+                href="${url}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                ${branch.mapUrl ? "Cómo llegar" : "Consultar ubicación"}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </article>
+          `;
+        }).join("");
+    }
+
+    function formatDate(value) {
+      if (!value) return "";
+
+      const [year, month, day] = value.split("-").map(Number);
+
+      return new Intl.DateTimeFormat("es-EC", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      }).format(new Date(year, month - 1, day));
+    }
+
+    function updateSummary() {
+      const selectedProduct = productInput.value;
+      const servings = document.querySelector("#servings").value;
+      const date = dateInput.value;
+      const details = [];
+
+      document.querySelector("#summary-product").textContent =
+        selectedProduct || "Pedido personalizado";
+
+      if (servings) details.push(`${servings} personas`);
+      if (date) details.push(formatDate(date));
+      if (deliveryInput.value) details.push(deliveryInput.value);
+
+      document.querySelector("#summary-details").textContent =
+        details.length
+          ? details.join(" · ")
+          : "Completa el formulario para preparar tu solicitud.";
+
+      clearSelection.hidden = !selectedProduct;
+    }
+
+    function updateDelivery() {
+      const isPickup = deliveryInput.value === "Retiro en local";
+
+      branchField.hidden = !isPickup;
+      branchInput.disabled = !isPickup;
+
+      if (!isPickup) branchInput.value = "";
+
+      updateSummary();
+    }
+
+    document.querySelectorAll(".filter").forEach((button) => {
+      button.addEventListener("click", () => {
+        const selectedCategory = button.dataset.filter;
+        let visibleCount = 0;
+
+        document.querySelectorAll(".filter").forEach((filter) => {
+          const active = filter === button;
+
+          filter.classList.toggle("is-active", active);
+          filter.setAttribute("aria-pressed", String(active));
+        });
+
+        document.querySelectorAll(".product-card").forEach((card) => {
+          const visible =
+            selectedCategory === "todos" ||
+            card.dataset.category === selectedCategory;
+
+          card.hidden = !visible;
+          if (visible) visibleCount++;
+        });
+
+        document.querySelector("#catalog-status").textContent =
+          `${visibleCount} opciones disponibles en esta categoría.`;
+      });
+    });
+
+    productGrid.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-product]");
+      if (!button) return;
+
+      const product = products.find(
+        (item) => item.id === button.dataset.product
+      );
+
+      if (!product) return;
+
+      productInput.value = product.name;
+      updateSummary();
+
+      document.querySelector("#customer-name").focus({
+        preventScroll: true
+      });
+
+      document.querySelector("#cotizar").scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth"
+      });
+    });
+
+    clearSelection.addEventListener("click", () => {
+      productInput.value = "";
+      updateSummary();
+    });
+
+    form.addEventListener("input", updateSummary);
+    deliveryInput.addEventListener("change", updateDelivery);
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const name = document.querySelector("#customer-name").value.trim();
+
+      if (!name) {
+        document.querySelector("#customer-name").value = "";
+        document.querySelector("#customer-name").reportValidity();
+        return;
+      }
+
+      const message = [
+        "Hola, Pastelerías García. Quisiera solicitar una cotización.",
+        "",
+        `*Nombre:* ${name}`,
+        `*Producto:* ${productInput.value || "Pedido personalizado"}`,
+        `*Ocasión:* ${document.querySelector("#occasion").value}`,
+        `*Fecha:* ${formatDate(dateInput.value)}`,
+        `*Personas aproximadas:* ${document.querySelector("#servings").value}`,
+        `*Sabor de preferencia:* ${document.querySelector("#flavor").value.trim() || "Por consultar"}`,
+        `*Modalidad:* ${deliveryInput.value}`,
+        ...(deliveryInput.value === "Retiro en local"
+          ? [`*Sucursal:* ${branchInput.value || "Por coordinar"}`]
+          : []),
+        `*Detalles:* ${document.querySelector("#notes").value.trim() || "Sin detalles adicionales"}`,
+        "",
+        "¿Me ayudan con el precio, la disponibilidad y las condiciones del pedido?"
+      ].join("\n");
+
+      window.location.assign(whatsappUrl(message));
+    });
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("#main-nav");
+
+    function closeMenu() {
+      menuToggle.setAttribute("aria-expanded", "false");
+      nav.classList.remove("is-open");
+    }
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      nav.classList.toggle("is-open", !isOpen);
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        const wasOpen = menuToggle.getAttribute("aria-expanded") === "true";
+        closeMenu();
+        if (wasOpen) menuToggle.focus();
+      }
+    });
+
+    const today = new Date();
+    const localDate = [
+      today.getFullYear(),
+      String(today.getMonth() + 1).padStart(2, "0"),
+      String(today.getDate()).padStart(2, "0")
+    ].join("-");
+
+    dateInput.min = localDate;
+
+    document.querySelector("#year").textContent = today.getFullYear();
+
+    renderProducts();
+    renderBranches();
+    updateDelivery();
+  </script>
+</body>
+</html>
